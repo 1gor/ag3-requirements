@@ -1,0 +1,34 @@
+With regards to the Ag3 system, taken as a whole, we are at a *problem definition* stage.
+
+At this stage we need:
+
+- Gain agreement on what problems need to be solved.
+- Identify stakeholders to the system.
+- Define the boundaries of the system.
+- Describe primary features of the system.
+
+This will allow us to align the project team in their understanding of the system.
+
+In Defining the System we are focusing on identifying actors and use cases of the system, and recording the non-functional requirements (legal, financial etc.).
+
+* Let us start with discussing what problem are we solving for whome
+
+We are going to use [[https://github.com/PlantVillage/plantvillage/wiki/Ag3Visionforusers][David's Ag3Visionforusers]] wiki page at this stage. Later we'll refine this using input from all the other
+
+So, what is Ag3? "It is a content management system for people who work with farmers". From the description on  [[https://github.com/PlantVillage/plantvillage/wiki/Ag3Visionforusers][the wiki page]] we can identify a few Actors (types of use who interact with the system). We can also see if we can identify a few Entities (a logical unit that the system works with with).
+
+- Staff Worker :: This is a worker belonging to an organisation such as PlantVillage, but they can work for the Government (Extension Workers) and Charities or Private Companies. In PlantVillage this will be the Dream Team.
+- Lead farmer :: These are sophisticated Farmers (who have smartphones) who are managing *Follower farmers*. By 'managing' we understand adding farmers to their list, changing their attributes, sending them some information etc.
+- Farmer :: (or 'Follower farmer' as mentioned by David, but let us skip extra word, since this is the basic category of the farmer). They have at least a feature phone (thought they can have a smartphone, and even can have Nuru installed there, but the won't have any Lead Farmer capabilities there). Farmers can have one *or several* farms/fields, and they will be receiving farming advice, alerts on stress events and other information. Some of this information will come from the Lead Farmer, at their discretion. Some information will be coming from the central organisation in the form of SMS mailings.
+- Manager :: we can assume we'll need this user to manage Staff Workers and overview the data, to configure various processes etc. Annalyse will play this role for PlantVillage, and in case of other organisations, this may be a Government, Charity or Private Company manager.
+- Analyst (external) :: we most likely want to give selected access to sponsors, external researchers etc. The access rights will not include changing anything, but having table or chart/maps view over stress situation in various countries/regions etc.
+
+Ok, now let us enumerate the entities we have so fare.
+
+- Organization :: This is an entity to which Manager and Lead Farmer belongs to. This can be PlantVilage or this can be some government agency, a private company etc.
+- Farm :: The overall objective is to help farmers to grow food more efficiently. So farm is the basic entity level. But a farm have one field with Maizes and another with Cassava. In this case, we need to introduce a
+- Field :: is as a sub-unit of the Farm, which is growing one *crop*
+
+Here we need some thinking to do. We could agree that *crop* is just a kind of a plant (i.e. wheat, cassava etc.). But we are also interested in a stage of the plant's growth. So we add another entity called 'a planting cycle' will be more appropriate see [[https://en.wikipedia.org/wiki/Agricultural_cycle][Agricultural cycle]] in the wikipedia.
+- Agrocycle :: an full cycle of planting the seeds, taking care of the soil and eventually harvesting the plant. This entity has attributes such as starting date, stage of the cycle (crop-dependent)
+- Crop :: a kind of plant grown at this field.
